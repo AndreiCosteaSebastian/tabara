@@ -6,7 +6,7 @@ let DEFAULT_HEIGHT = 720
 
 let config = {
   type: Phaser.AUTO,
-  backgroundColor: '#910661',
+  backgroundColor: '#ffffff',
   scale: {
     parent: 'phaser-game',
     mode: Phaser.Scale.FIT,
@@ -14,12 +14,18 @@ let config = {
     width: DEFAULT_WIDTH,
     height: DEFAULT_HEIGHT
   },
+  render: {
+    pixelArt: true
+  },
   scene: [MainScene],
   physics: {
     default: 'arcade',
     arcade: {
-      debug: false,
-      gravity: { y: 400 }
+      gravity: { y: 400 },
+      debug: true,
+      debugShowVelocity: true,
+      debugShowBody: true,
+      debugShowStaticBody: true
     }
   }
 }
